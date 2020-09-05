@@ -55,6 +55,9 @@ struct WriteOptions;
 #ifdef ROCKSDB_LITE
 class CompactionJobInfo;
 #endif
+struct Cache;
+struct WriteBufferManager;
+class WriteBatch;
 class Env;
 class EventListener;
 class FileSystem;
