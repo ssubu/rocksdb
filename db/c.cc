@@ -264,6 +264,7 @@ struct rocksdb_compactionfilter_t : public CompactionFilter {
         &c_new_value, &new_value_length, &c_value_changed);
     if (c_value_changed) {
       new_value->assign(c_new_value, new_value_length);
+      free(c_new_value);
       *value_changed = true;
     }
     return result;
