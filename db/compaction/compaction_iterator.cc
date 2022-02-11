@@ -227,8 +227,8 @@ bool CompactionIterator::InvokeFilterIfNeeded(bool* need_skip,
           : key_;
   {
     StopWatchNano timer(clock_, report_detailed_time_);
+    blob_value_.Reset();
     if (kTypeBlobIndex == ikey_.type) {
-      blob_value_.Reset();
       filter = compaction_filter_->FilterBlobByKey(
           level_, filter_key, &compaction_filter_value_,
           compaction_filter_skip_until_.rep());
